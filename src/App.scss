@@ -1,3 +1,18 @@
+
+
+
+.App {
+  width: 512px;
+  margin: 0 auto;
+  margin-top: 4rem;
+  border: 1px solid black;
+  padding: 1rem;
+  .buttons + .buttons {
+    margin-top: 1rem;
+  }
+}
+
+/*
 .App {
   text-align: center;
 }
@@ -36,3 +51,4 @@
     transform: rotate(360deg);
   }
 }
+*/
