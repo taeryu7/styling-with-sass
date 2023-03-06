@@ -1,0 +1,25 @@
+styled-components
+
+CSS in JS
+이 문구가 뜻하는 그대로, 이 기술은 JS 안에 CSS 를 작성하는 것을 의미한다.
+↓ 아래에 공식 사이트 주소
+https://styled-components.com/
+
+styled-components 는 현존하는 CSS in JS 관련 리액트 라이브러리 중에서 가장 인기 있는 라이브러리이고, 대안으로는 emotion 와 styled-jsx가 있다.
+
+Tagged Template Literal
+styled-components 를 사용하기 전에, Tagged Template Literal 이라는 문법에 대하여 짚고 넘어가면
+styled-components 가 내부적으로 어떻게 작동하는지 이해 할 수 있다.
+
+↓아래가 기존의 Template Literal 문자열 조합을 더욱 쉽게 할 수 있게 해주는 ES6 문법으로 작성한 코드이다.
+const name = 'react';
+const message = `hello ${name}`;
+console.log(message);
+// "hello react"
+
+↓Template Literal 을 사용 할 때 ${} 안에 일반 문자열 / 숫자가 아닌 객체를 넣는다면 아래처럼 작성이 가능하다.
+const object = { a: 1 };
+const text = `${object}`
+console.log(text);
+// "[object Object]"
+

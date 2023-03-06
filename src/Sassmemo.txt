@@ -461,3 +461,27 @@ Function을 선언 할 때는 @function directive 를 사용한다.
 
 팁: 자주 사용 할 것 같은 함수는 위와같이 단축함수를 만들어 사용하는게 편하다. 한다고해서 결과물의 용량은 안늘어난다.
 
+
+CSS Module 은 Sass 에서도 사용 할 수 있다.
+확장자를 .module.scss 로 바꿔주면 가능하고, 그전에 node-sass를 설치해야한다.
+
+↓ CSS Module 을 사용하고 있는 파일에서 클래스 이름을 고유화 하지 않고 전역적 클래스이름을 사용하고 싶다면 아래처럼 ↓ 작성하면된다.
+:global .my-global-name {
+}
+
+↓ Sass 를 사용한다면 아래 ↓ 처럼 작성하면 된다.
+ :global {
+  .my-global-name {
+  }
+}
+
+↓ 반대로, CSS Module 을 사용하지 않는 곳에서 특정 클래스에서만 고유 이름을 만들어서 사용하고 싶다면 아래처럼 할 수 있다.
+:local .make-this-local {
+}
+
+↓ Sass 라면 이렇게 표현 할 수 있다.
+:local {
+  .make-this-local {
+
+  }
+}
