@@ -23,3 +23,18 @@ const text = `${object}`
 console.log(text);
 // "[object Object]"
 
+↓함수를 넣는다고 가정 했을 때
+const fn = () => true
+const msg = `${fn}`;
+console.log(msg);
+// "() => true"
+
+
+
+polished의 스타일 관련 유틸 함수 사용하기
+
+Sass 를 사용 할 때에는 lighten() 또는 darken() 과 같은 유틸 함수를 사용하여 색상에 변화를 줄 수 있는데,
+CSS in JS 에서도 비슷한 유틸 함수를 사용하고 싶다면 polished 라는 라이브러리를 사용하면 된다.
+
+패키지를 설치해야 사용이 가능하다. $ yarn add polished
+
