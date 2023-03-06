@@ -1,4 +1,85 @@
 
+
+// rest props 전달하기
+
+// 필요한 이벤트가 있을 때 마다 매번 이렇게 넣어주는건 귀찮은 작업이다.
+// 이러한 문제를 해결 해줄 수 있는 문법이 있는데 바로 spread와 rest이다.
+// 이 문법은 주로 배열과 객체, 함수의 파라미터, 인자를 다룰 때 사용한다.
+import React from 'react';
+import classNames from 'classnames';
+import './Button.scss';
+
+function Button({ children, size, color, outline, fullWidth, ...rest }) {
+  return (
+    <button
+      className={classNames('Button', size, color, { outline, fullWidth })}
+      {...rest}
+    >
+      {children}
+    </button>
+  );
+}
+
+Button.defaultProps = {
+  size: 'medium',
+  color: 'blue'
+};
+
+export default Button;
+// ...rest를 사용해서 우리가 지정한 props 를 제외한 값들을 rest 라는 객체에 모아주고, 
+// <button> 태그에 {...rest} 를 해주면, rest 안에 있는 객체안에 있는 값들을 모두 <button> 태그에 설정을 해준다.
+
+
+
+/*
+//전체 너비 차지하는 옵션
+import React from 'react';
+import classNames from 'classnames';
+import './Button.scss';
+
+function Button({ children, size, color, outline, fullWidth }) {
+  return (
+    <button
+      className={classNames('Button', size, color, { outline, fullWidth })}
+    >
+      {children}
+    </button>
+  );
+}
+
+Button.defaultProps = {
+  size: 'medium',
+  color: 'blue'
+};
+
+export default Button;
+*/
+
+/*
+// outline 옵션 만들기
+import React from 'react';
+import classNames from 'classnames';
+import './Button.scss';
+
+function Button({ children, size, color, outline }) {
+  return (
+    <button className={classNames('Button', size, color, { outline })}>
+      {children}
+    </button>
+  );
+}
+
+Button.defaultProps = {
+  size: 'medium',
+  color: 'blue'
+};
+
+export default Button;
+// outline 값을 props 로 받아와서 객체 안에 집어 넣은 다음에 classNames() 에 포함시켜줬는데,
+// outline 값이 true 일 때에만 button 에 outline CSS 클래스가 적용ehlsek.
+*/
+
+/*
 // 버튼색상 설정하기
 import React from 'react';
 import classNames from 'classnames';
@@ -16,6 +97,7 @@ Button.defaultProps = {
 };
 
 export default Button;
+*/
 
 /*
 버튼 사이즈 조정하기
